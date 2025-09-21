@@ -1,22 +1,111 @@
-# top-most EditorConfig file
+# EditorConfig is awesome: https://EditorConfig.org
+
+# Top-most EditorConfig file
 root = true
 
+# Default settings for all files
 [*]
 charset = utf-8
 end_of_line = lf
 insert_final_newline = true
-indent_style = space
 trim_trailing_whitespace = true
-
-[*.{yml,yaml,json,xml,md}]
+indent_style = space
 indent_size = 2
 
-[*.{kt,kts}]
-indent_size = 4
-continuation_indent_size = 4
-
-[*.swift]
-indent_size = 4
-
+# Dart files (Flutter)
 [*.dart]
+indent_style = space
+indent_size = 2
+max_line_length = 80
+
+# YAML files (pubspec.yaml, GitHub Actions, etc.)
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+
+# JSON files
+[*.json]
+indent_style = space
+indent_size = 2
+
+# XML files (Android layouts, manifests)
+[*.xml]
+indent_style = space
+indent_size = 4
+
+# Gradle files (Android)
+[*.{gradle,gradle.kts}]
+indent_style = space
+indent_size = 4
+
+# Kotlin files (Android)
+[*.{kt,kts}]
+indent_style = space
+indent_size = 4
+max_line_length = 120
+
+# Java files (Android)
+[*.java]
+indent_style = space
+indent_size = 4
+max_line_length = 120
+
+# Swift files (iOS)
+[*.swift]
+indent_style = space
+indent_size = 4
+max_line_length = 120
+
+# Objective-C files (iOS)
+[*.{m,h}]
+indent_style = space
+indent_size = 4
+
+# JavaScript/TypeScript (if using web)
+[*.{js,ts,jsx,tsx}]
+indent_style = space
+indent_size = 2
+
+# CSS/SCSS (if using web)
+[*.{css,scss,sass}]
+indent_style = space
+indent_size = 2
+
+# HTML files (if using web)
+[*.html]
+indent_style = space
+indent_size = 2
+
+# Properties files (Android)
+[*.properties]
+indent_style = space
+indent_size = 4
+
+# Markdown files
+[*.md]
+trim_trailing_whitespace = false
+max_line_length = off
+
+# Makefiles
+[{Makefile,makefile}]
+indent_style = tab
+
+# Shell scripts
+[*.sh]
+indent_style = space
+indent_size = 2
+
+# CMake files (if using)
+[{CMakeLists.txt,*.cmake}]
+indent_style = space
+indent_size = 2
+
+# Podfile (iOS)
+[Podfile]
+indent_style = space
+indent_size = 2
+
+# Info.plist (iOS)
+[*.plist]
+indent_style = space
 indent_size = 2
