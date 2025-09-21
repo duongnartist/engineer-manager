@@ -3,11 +3,20 @@ The best guideline for Engineer Manager
 
 ## 1. Mục tiêu
 
+### 1.1. Lý thuyết
+
 - Đảm bảo chất lượng sản phẩm: code sạch, tuân thủ convention, kiểm soát bug, hạn chế tech debt.
 - Đảm bảo bảo mật: tránh rò rỉ dữ liệu nhạy cảm, tuân thủ quy trình commit & review.
 - Đảm bảo tiến độ: velocity ổn định trong mỗi sprint 2 tuần, cân bằng feature & tech debt.
 - Đảm bảo sự phối hợp: Developer, QA/QC, Leader, Manager, PO làm việc minh bạch, trách nhiệm rõ ràng, không blame.
 - Đảm bảo quy trình chuẩn hóa: từ Git Flow, commit, review, lint/format, đến release & QA test → team có chung ngôn ngữ và công cụ.
+
+### 1.2. Thực tế
+
+- Tốc độ ưu tiên số 1 → hoàn thành nhanh để kịp deadline, ra mắt sớm.
+- Chất lượng vừa đủ → code và test đảm bảo không crash, không bug nghiêm trọng trong sản phẩm demo/production.
+- Giảm overhead → quy trình commit, review, QA/QC rút gọn, tập trung task critical.
+- Linh hoạt → chấp nhận tech debt có kiểm soát, xử lý sau release nếu cần.
 
 ## 2. Thực hiện
 
@@ -271,10 +280,20 @@ Hi [PO], hiện tại team đang có một số tech debt [mô tả ngắn]. N�
 
 ## 3. Kết luận
 
+### 3.1. Lý thuyết
+
 - Developer → Code sạch, test trước khi giao, phối hợp QA/QC.
 - QA/QC → Test có kế hoạch, log bug chi tiết, ưu tiên theo severity.
 - Leader → Điều phối công việc, review code, gỡ vướng mắc kỹ thuật.
 - Manager → Quản lý tiến độ, nguồn lực, đảm bảo đúng cam kết.
 - PO → Xác định ưu tiên, rõ ràng yêu cầu, cân bằng feature và tech debt.
+
+### 3.2. Thực tế
+
+- Developer: Code nhanh, sạch vừa đủ, tự test cơ bản trước khi giao.
+- QA/QC: Ưu tiên test case critical, skip minor để không chặn release.
+- Leader: Quyết định nhanh, giảm vòng lặp review, tập trung unblock team.
+- Manager: Cân đối nguồn lực, bảo vệ team khỏi scope creep.
+- PO: Rõ ràng yêu cầu cốt lõi, chấp nhận trade-off chất lượng/phạm vi để kịp tiến độ.
 
 👉 Chung mục tiêu: giao sản phẩm chất lượng, đúng tiến độ, không blame, cùng chịu trách nhiệm.
