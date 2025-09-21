@@ -1,0 +1,21 @@
+build:
+  maxIssues: 10
+  excludeCorrectable: false
+
+style:
+  MagicNumber:
+    active: true
+    ignoreNumbers: [0,1,-1]
+  MaxLineLength:
+    active: true
+    maxLineLength: 120
+  NewLineAtEndOfFile:
+    active: true
+
+naming:
+  FunctionNaming:
+    active: true
+    functionPattern: '^[a-z][a-zA-Z0-9]*$'
+  VariableNaming:
+    active: true
+    variablePattern: '^[a-z][a-zA-Z0-9]*$'

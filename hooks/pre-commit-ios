@@ -1,0 +1,38 @@
+#!/bin/bash
+# Pre-commit hook cho iOS Team
+
+set -e
+
+echo "🔍 iOS pre-commit checks..."
+
+# 1. Lint + Format
+swiftlint --fix || {
+  echo "❌ SwiftLint failed"
+  exit 1
+}
+
+# 2. Spelling check (class name/file name)
+git diff --cached --name-only | grep -E '\.(swift)$' | while read file; do
+  if grep -nE "[^a-zA-Z0-9_]" "$file" | grep "class "; then
+    echo "❌ Lỗi đặt tên trong file $file"
+    exit 1
+  fi
+done
+
+# 3. Security check
+if git diff --cached | grep -E "(API_KEY|PASSWORD|SECRET|TOKEN)"; then
+  echo "❌ Phát hiện secret trong code!"
+  exit 1
+fi
+
+# 4. Commit message check
+MSG_FILE=$(git rev-parse --git-dir)/COMMIT_EDITMSG
+MSG=$(head -n1 "$MSG_FILE")
+
+if ! [[ $MSG =~ ^\[[A-Z]+-[0-9]+\]\ .+ ]]; then
+  echo "❌ Commit message sai format."
+  echo "✅ Định dạng đúng: [ABC-123] Nội dung commit"
+  exit 1
+fi
+
+echo "✅ iOS pre-commit passed!"

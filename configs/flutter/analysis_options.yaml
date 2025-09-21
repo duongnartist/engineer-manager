@@ -1,0 +1,25 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+
+linter:
+  rules:
+    prefer_const_constructors: true
+    avoid_print: true
+    always_use_package_imports: true
+    require_trailing_commas: true
+    sort_child_properties_last: true
+    use_super_parameters: true
+
+dart_code_metrics:
+  metrics:
+    cyclomatic-complexity: 20
+    lines-of-code: 100
+    number-of-parameters: 4
+    maximum-nesting-level: 5
+  rules:
+    - no-boolean-literal-compare
+    - no-empty-block
+    - prefer-trailing-comma
